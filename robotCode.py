@@ -15,7 +15,7 @@ driveRight = BP.PORT_B
 line_bound = 2
 #Control Gains
 p = 0.8
-
+touch  = 0
 def driveForward(speed):
     BP.set_motor_power(driveLeft + driveRight,  speed)
 
