@@ -53,9 +53,8 @@ def correctPath(lightValue, targetValue, speed):
 def addColorSensor(port):
     BP.set_sensor_type(port, BP.SENSOR_TYPE.EV3_INFRARED_PROXIMITY)
 
-
 def readColorSensor():
-    BP.get_sensor retrieves a sensor value.
+    BP.get_sensor(color_sensor)
 
 #==========
 #MAIN LOOP
@@ -64,13 +63,17 @@ def readColorSensor():
 
 
 #Error Bounds
-line_bound = 2
+line_bound = 3
 #Control Gains
-p = 0.8 
+p = 0.2
 
 try:
     while True:
-        
+        readColorSensor()
+except KeyboardInterrupt: # except the program gets interrupted by Ctrl+C on the keyboard.
+    BP.reset_all()        # Unconfigure the sensors, disable the motors, and restore the LED to the control of the BrickPi3 firmware.
+
+
 
 
 
