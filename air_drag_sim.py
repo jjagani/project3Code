@@ -42,6 +42,7 @@ while(h < 0):
 print("Final Acceleration" , a)
 print("Final Velocity", v)
 print("Final Height", h)
+print('Final time', t)
 
 plt.plot(xpoints, apoints, color = 'green')
 plt.plot(xpoints, vpoints, color = 'red')
